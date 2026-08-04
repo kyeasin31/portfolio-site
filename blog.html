@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Yuyu&display=swap" rel="stylesheet">  
+    <style>
+        .project-image {
+            width: 200px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+    </style>
+    <title>My Blog</title>
+</head>
+<body>
+   
+   <div id="nav-placeholder"></div>
+
+    <div class="filter">
+        <button
+            class="filter-button active"
+            data-filter="All"
+            type="button"
+        >
+            All Posts
+        </button>
+
+        <button
+            class="filter-button"
+            data-filter="Web Development"
+            type="button"
+        >
+            Web Development
+        </button>
+
+        <button
+            class="filter-button"
+            data-filter="JavaScript"
+            type="button"
+        >
+            JavaScript
+        </button>
+
+        <button
+            class="filter-button"
+            data-filter="Forms"
+            type="button"
+        >
+            Forms
+        </button>
+    </div>
+   <main>
+        <div class="content" id="blog-list"></div>
+   </main>
+   
+
+   <div id="footer-placeholder"></div>
+
+   <script src="js/theme.js"></script>
+   <script src="js/components.js"></script>
+   <script src="js/blog.js"></script>
+</body>
+</html>

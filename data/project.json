@@ -1,0 +1,282 @@
+[
+    {
+        "id": "KSBL-website",
+        "title": "Designed and Built the Company Website of KSBL",
+        "category": "Web Development",
+        "image": "img/project-1.png",
+        "summary": "How I designed and built the official company website of Khan & Sons Bangladesh Ltd.",
+        "content": "I designed and developed the official website of Khan & Sons Bangladesh Ltd., a long-established construction and real estate company based in Bangladesh.",
+
+        "overview": "Khan & Sons Bangladesh Ltd. is a long-established construction and real estate company based in Bangladesh. The company needed a professional website that could represent its history, services, projects, and business identity. I worked on designing and developing the official website to create a modern and accessible online presence.",
+
+        "role": "UI/UX Designer and Front-End Developer",
+
+        "technologies": [
+            "Figma",
+            "React.js",
+            "TypeScript",
+            "HTML",
+            "CSS"
+        ],
+
+        "goals": [
+            "Create a professional online presence for the company",
+            "Present the company's history and services clearly",
+            "Showcase construction and real estate projects",
+            "Create a responsive website for desktop and mobile devices"
+        ],
+
+        "process": [
+            {
+                "title": "Research and Planning",
+                "description": "I reviewed the company's background, services, projects, and target audience before organizing the website structure."
+            },
+            {
+                "title": "UI and UX Design",
+                "description": "I used Figma to create the page layouts and visual design before beginning development."
+            },
+            {
+                "title": "React Development",
+                "description": "I converted the Figma designs into reusable React components and used TypeScript to improve code organization and reliability."
+            },
+            {
+                "title": "Responsive Testing",
+                "description": "I tested the website on different screen sizes to make sure the pages worked properly on desktop, tablet, and mobile devices."
+            }
+        ],
+
+        "features": [
+            "Responsive navigation",
+            "Company history section",
+            "Services information",
+            "Construction project showcase",
+            "Reusable React components",
+            "Mobile-friendly layout",
+            "Contact information"
+        ],
+
+        "challenges": [
+            {
+                "title": "Representing an established company",
+                "description": "The company has been operating for many years, so I needed to create a design that respected its history while still looking modern."
+            },
+            {
+                "title": "Creating reusable components",
+                "description": "I organized repeated elements into React components so that the website would be easier to maintain and update."
+            }
+        ],
+
+        "lessons": "This project helped me improve my ability to translate Figma designs into responsive React interfaces. I also gained more experience using TypeScript and creating reusable components for a real business website.",
+
+        "websiteUrl": "https://ksblgroup.com.bd/",
+
+         "gallery": [
+            "img/project-1.png",
+           "img/ksblgallery.png"
+    
+        
+    ]
+
+
+
+       
+    },
+   {
+    "id": "Growthify-mobile-app",
+    "title": "Growthify Goal-Focused Budgeting App",
+    "category": "Mobile App Design",
+    "image": "img/project-2.png",
+    "summary": "A low-fidelity interactive budgeting application designed to help users track expenses and save toward personal financial goals.",
+
+    "content": "Growthify is a goal-focused budgeting application designed for personal use. It allows users to track their expenses, define a savings goal, and receive support from the application in working toward that goal.",
+
+    "overview": "Growthify was designed as a personal budgeting application focused on helping users build better financial habits. The main idea was to create an application where users could monitor their spending, understand where their money was going, and set a specific financial goal they wanted to achieve. The application would then help users understand how much they needed to save and support them as they worked toward that goal.",
+
+    "role": "UX Researcher and UI/UX Designer",
+
+    "technologies": [
+        "Figma",
+        "Low-Fidelity Prototyping",
+        "User Interviews",
+        "Requirement Analysis",
+        "Usability Walkthroughs"
+    ],
+
+    "goals": [
+        "Help users track personal expenses",
+        "Allow users to create a specific savings goal",
+        "Help users understand how much they need to save",
+        "Create a simple and understandable budgeting experience",
+        "Design the application around real user needs",
+        "Improve the interface through user testing and feedback"
+    ],
+
+    "process": [
+        {
+            "title": "Requirement Analysis",
+            "description": "We began by identifying the main purpose of the application and the problems it needed to solve. We considered what information users would need to enter, how expenses should be organized, and how the application could help users work toward a personal savings goal."
+        },
+        {
+            "title": "User Interviews",
+            "description": "We conducted a series of interviews with test participants to understand what they expected from a budgeting application. We asked about their spending habits, financial goals, current budgeting methods, and the difficulties they experienced when trying to manage their money."
+        },
+        {
+            "title": "Organizing User Requirements",
+            "description": "The feedback from the interviews was used to identify important user needs and application features. These included tracking expenses, reviewing spending activity, setting a financial goal, and clearly understanding progress toward that goal."
+        },
+        {
+            "title": "Low-Fidelity Prototype",
+            "description": "Using Figma, we created a low-fidelity interactive prototype. The prototype focused on the overall structure, navigation, screen layout, and user flow rather than final colours, visual details, or branding."
+        },
+        {
+            "title": "Usability Walkthrough",
+            "description": "After the first prototype was completed, test participants were asked to navigate through the application and complete specific tasks. These tasks included viewing expenses, entering information, setting a goal, and finding important sections of the application."
+        },
+        {
+            "title": "Feedback Analysis",
+            "description": "We observed how participants moved through the prototype and recorded where they became confused, took an unexpected path, or had difficulty completing a task. We also collected their comments about the navigation, labels, layout, and overall experience."
+        },
+        {
+            "title": "Design Revision",
+            "description": "Based on the walkthrough results, we changed parts of the prototype to make the experience clearer and easier to use. Navigation elements, screen layouts, labels, and task flows were adjusted according to the needs and behaviours identified during testing."
+        }
+    ],
+
+    "features": [
+        "Personal expense tracking",
+        "Expense category organization",
+        "Savings goal creation",
+        "Goal progress tracking",
+        "Budget overview",
+        "Interactive low-fidelity prototype",
+        "Task-based navigation",
+        "User-tested interface",
+        "Revised design based on participant feedback"
+    ],
+
+    "challenges": [
+        {
+            "title": "Understanding different budgeting needs",
+            "description": "Different users manage their finances in different ways. Some focus mainly on tracking daily expenses, while others are more interested in saving for a specific purpose. We used interviews to understand these different expectations and identify the most important shared needs."
+        },
+        {
+            "title": "Keeping the application simple",
+            "description": "Budgeting applications can become overwhelming when too much information is displayed at once. We worked to organize the screens and navigation so that users could understand their expenses and goals without feeling overloaded."
+        },
+        {
+            "title": "Designing clear task flows",
+            "description": "Some parts of the first prototype were not immediately clear to test participants. The walkthrough showed where users hesitated or took the wrong path, which helped us revise the navigation and make important tasks easier to complete."
+        },
+        {
+            "title": "Turning feedback into design changes",
+            "description": "Not every participant responded to the prototype in the same way. We reviewed repeated patterns in their feedback and focused on changes that would improve the experience for the widest range of users."
+        }
+    ],
+
+    "lessons": "This project taught me the importance of following a structured user-centred design process. I learned that designing an application is not only about creating screens in Figma, but also about understanding the users, identifying their requirements, testing the design, and improving it based on evidence. The interviews helped us understand what people needed from a goal-focused budgeting application, while the usability walkthrough showed us where the first prototype could be improved. I also learned how low-fidelity prototypes can be used to test navigation and user flow before spending time on detailed visual design. Most importantly, I learned that user feedback should directly influence design decisions so that the final experience is clearer, more useful, and easier to navigate.",
+
+    "websiteUrl": "",
+     "gallery": [
+        "img/project-2.png",
+        "img/GrowthifyHero.png"
+    ]
+
+   
+},
+   {
+    "id": "Smart-Parking-Share",
+    "title": "York Smart Parking Share",
+    "category": "Backend Development",
+    "image": "img/project-3.png",
+    "summary": "A web application designed to reduce parking costs for York University commuters by allowing compatible users to share a parking permit based on their weekly schedules.",
+
+    "content": "York Smart Parking Share is a web application that addresses the high cost of parking permits at York University. The system matches users whose campus schedules do not overlap, allowing two commuters to efficiently share a single parking permit and significantly reduce parking expenses.",
+
+    "overview": "Parking permits at York University can be a significant expense for students and staff who commute to campus. Our team identified an opportunity to improve permit utilization by allowing two users with complementary schedules to share the same permit. For example, if one commuter only attends campus on Monday, Wednesday, and Friday, another commuter who attends on Tuesday and Thursday could use the same permit during those remaining days. The application was designed to match compatible users automatically based on their weekly schedules, allowing both individuals to benefit from lower parking costs while maximizing the use of a single permit.",
+
+    "role": "Backend Developer and Front-End Developer",
+
+    "technologies": [
+        "PHP",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "MySQL"
+    ],
+
+    "goals": [
+        "Reduce parking expenses for York University commuters",
+        "Maximize the utilization of parking permits",
+        "Automatically match users with compatible schedules",
+        "Provide an easy-to-use web interface for managing parking sharing",
+        "Create a secure and reliable matching system"
+    ],
+
+    "process": [
+        {
+            "title": "Problem Identification",
+            "description": "Our team began by identifying the financial burden created by parking permits for students and staff who commute to York University. We explored how permits were often underutilized because many commuters were only on campus for part of the week."
+        },
+        {
+            "title": "Solution Planning",
+            "description": "We designed a concept where two users could share one parking permit if their weekly campus schedules did not overlap. The focus was on creating an efficient matching system that benefited both users."
+        },
+        {
+            "title": "Database Design",
+            "description": "The backend was planned around storing user information, weekly schedules, parking preferences, and permit-sharing data so that potential matches could be identified efficiently."
+        },
+        {
+            "title": "Backend Development",
+            "description": "I developed the backend functionality using PHP. This included processing user data, managing schedule information, communicating with the database, and supporting the matching logic used by the application."
+        },
+        {
+            "title": "Front-End Development",
+            "description": "I also contributed to the user interface by developing several pages using HTML, CSS, and JavaScript, ensuring that users could easily navigate the application and manage their parking information."
+        },
+        {
+            "title": "Testing and Refinement",
+            "description": "The application was tested to verify that users with compatible schedules could be matched correctly while preventing schedule conflicts between shared permit holders."
+        }
+    ],
+
+    "features": [
+        "Weekly schedule management",
+        "Automatic user matching",
+        "Parking permit sharing",
+        "User account management",
+        "Database-driven backend",
+        "Responsive web interface",
+        "Schedule compatibility checking",
+        "Reduced parking costs through permit sharing"
+    ],
+
+    "challenges": [
+        {
+            "title": "Designing the matching logic",
+            "description": "One of the biggest challenges was determining how users could be matched based on their weekly schedules. The application needed to ensure that two users would never require the parking permit on the same day."
+        },
+        {
+            "title": "Managing user schedules",
+            "description": "Users could have different schedules every week, so the backend needed to store and process scheduling information efficiently while maintaining accurate matching results."
+        },
+        {
+            "title": "Connecting the frontend and backend",
+            "description": "The user interface needed to communicate effectively with the PHP backend so that schedule information could be submitted, processed, and displayed correctly."
+        },
+        {
+            "title": "Creating a practical solution",
+            "description": "Rather than developing a purely theoretical application, our goal was to create a realistic system that could genuinely help York University commuters reduce their transportation costs."
+        }
+    ],
+
+    "lessons": "This project strengthened my understanding of backend web development using PHP and database-driven applications. I gained experience designing backend functionality that processed user information and supported schedule-based matching while also contributing to the front-end using HTML, CSS, and JavaScript. More importantly, I learned how software engineering can be used to solve real-world problems by focusing on user needs rather than simply implementing technical features. Working on this project also reinforced the importance of designing reliable backend logic, since even small errors in the matching algorithm could lead to scheduling conflicts between users.",
+
+    "websiteUrl": "",
+
+    "gallery": [
+        "img/project-3.png",
+        "img/SMARTP.png"
+        
+    ]
+}
+]

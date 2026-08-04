@@ -1,0 +1,280 @@
+[
+    
+  {
+    "id": "dark-mode",
+    "title": "Dark Mode Implementation",
+    "date": "2026-07-15",
+    "category": "JavaScript",
+    "image": "img/webpage-lang.png",
+    "summary": "How I created a light and dark theme that remembers the user's preference across pages and future visits.",
+
+    "introduction": "One of the first JavaScript features I added to my ePortfolio was a persistent dark mode. The purpose of this feature was to allow visitors to switch between a light and dark colour theme. I also wanted the website to remember the selected theme when the page was refreshed or when the visitor navigated to another page.",
+
+    "feature": "The dark mode changes the appearance of the entire website by adding a data-theme attribute to the body element. My CSS reads this attribute and changes the values of the colour variables used throughout the website. The user's selection is saved in localStorage so that the same theme can be restored during future page loads.",
+
+    "approach": [
+        {
+            "title": "Creating CSS theme variables",
+            "description": "I first created CSS custom properties for important colours such as the page background, text colour, navigation background, card background, button colours, and scrollbar colours. The light theme uses the default values defined in the root selector, while the dark theme replaces those values when the body has data-theme set to dark."
+        },
+        {
+            "title": "Applying the theme with JavaScript",
+            "description": "I created an applyTheme function that adds the selected theme to the body element using setAttribute. The same function updates the toggle checkbox and saves the selected value in localStorage."
+        },
+        {
+            "title": "Loading the saved preference",
+            "description": "When a page loads, the loadSavedTheme function checks localStorage for a saved theme. If the stored value is dark or light, that theme is applied. If no theme has been saved, the website uses light mode as the default."
+        },
+        {
+            "title": "Connecting the toggle switch",
+            "description": "I used a checkbox styled as a sliding switch. When its value changes, JavaScript checks whether it is selected and applies either the dark or light theme."
+        },
+        {
+            "title": "Supporting the dynamic navigation",
+            "description": "My theme switch is located inside a navigation component that is loaded dynamically. Because the checkbox does not exist when the page initially begins loading, I created a setupThemeToggle function and called it after the navigation component had been inserted into the page."
+        }
+    ],
+
+    "challenges": [
+        {
+            "title": "The checkbox could not be found",
+            "description": "At first, JavaScript was trying to access the toggle before the dynamically loaded navigation had been added to the DOM. This caused the toggle element to be null. I solved this by running the theme toggle setup only after components.js finished loading the navigation."
+        },
+        {
+            "title": "The theme attribute changed but the page colours did not",
+            "description": "Another problem was that JavaScript successfully added data-theme to the body, but my original CSS still used fixed colour values. I replaced those fixed values with CSS variables so that changing the theme attribute would update the entire website."
+        },
+        {
+            "title": "Keeping the toggle synchronized",
+            "description": "When the saved dark theme was loaded, the page colours changed but the checkbox also needed to appear selected. I updated the checked property of the toggle inside applyTheme so that its visual position always matched the active theme."
+        }
+    ],
+
+    "lessons": [
+        "I learned how CSS custom properties can control the appearance of an entire website from one location.",
+        "I learned how data attributes allow JavaScript and CSS to work together.",
+        "I learned how localStorage can preserve a user's preference across page reloads and navigation.",
+        "I learned that dynamically loaded elements cannot be accessed until they have been inserted into the DOM.",
+        "I learned how separating the theme logic into its own JavaScript file makes the feature easier to reuse across multiple pages."
+    ],
+
+    "conclusion": "Building this feature helped me understand that dark mode involves more than changing a background colour. The theme must be applied consistently, saved between visits, restored during page loading, and synchronized with the toggle control. It also taught me how the timing of dynamically loaded components can affect other JavaScript features."
+    },
+  {
+    "id": "dynamic-blog-project-section",
+    "title": "Building Dynamic Blog and Project Sections",
+    "date": "2026-07-30",
+    "category": "JavaScript",
+    "image": "img/dynamic-posts.jpg",
+    "summary": "How I loaded blog posts and projects from JSON, generated cards with JavaScript, added category filters, and linked each project to a dynamic details page.",
+
+    "introduction": "One of the main goals of my ePortfolio was to avoid hard-coding every blog post and project directly into the HTML. Instead, I wanted the content to come from JSON files so that I could update the website by editing the data rather than rebuilding the page structure. I used JavaScript to fetch the JSON files, create the cards, apply filters, and display the correct content dynamically.",
+
+    "feature": "The dynamic blog and project sections load their information from separate JSON files. JavaScript reads each object, creates the required HTML elements, and inserts them into empty containers on the page. The user can also filter the cards by category. On the Projects page, each card links to one reusable details page, which reads the selected project ID from the URL and displays the matching project information.",
+
+    "approach": [
+        {
+            "title": "Storing content in JSON",
+            "description": "I created JSON files to store the information for my blog posts and projects. Each object contains properties such as id, title, category, image, summary, and content. My project objects also contain additional properties for goals, technologies, development process, challenges, lessons, and gallery images."
+        },
+        {
+            "title": "Fetching the JSON data",
+            "description": "I used the fetch function in both blog.js and project.js to load the JSON files. After the response was received, I converted it into JavaScript data using response.json. I also added error handling so that a message would appear if the data could not be loaded."
+        },
+        {
+            "title": "Creating cards dynamically",
+            "description": "I created an article element for every blog post or project. I then used template literals to build the image, title, category, summary, and link using the properties of the current JavaScript object. Finally, I appended each generated card to the appropriate container."
+        },
+        {
+            "title": "Sorting and formatting blog posts",
+            "description": "Before displaying the blog posts, I sorted them from newest to oldest using the date property. I also used the JavaScript Date object and toLocaleDateString to convert the stored date into a more readable format."
+        },
+        {
+            "title": "Adding the Latest Post badge",
+            "description": "Because the posts were sorted before rendering, the first object in the complete posts array represented the newest article. I compared each post ID with that first object and added a Latest Post badge only to the newest post."
+        },
+        {
+            "title": "Filtering by category",
+            "description": "I created filter buttons with custom data-filter attributes. When a button is clicked, JavaScript reads its selected category and uses the filter array method to create a smaller list containing only matching items. The display function then clears the existing cards and renders the filtered results."
+        },
+        {
+            "title": "Displaying all items by default",
+            "description": "The All button is active when the page first loads. After the JSON data is fetched, the complete posts or projects array is passed to the display function so that every card appears immediately."
+        },
+        {
+            "title": "Opening dynamic detail pages",
+            "description": "Each project card includes its project ID in the link, such as project-details.html?id=KSBL-website. The details page reads this ID using URLSearchParams, finds the matching project object, and generates the full project case study from the JSON properties."
+        }
+    ],
+
+    "challenges": [
+        {
+            "title": "Filtering before the JSON finished loading",
+            "description": "The filter buttons were available immediately, but the project and post arrays were initially empty because fetch works asynchronously. I stored the fetched data in variables such as projects and allPosts so that the filters could access the complete arrays after loading was finished."
+        },
+        {
+            "title": "Avoiding duplicate cards",
+            "description": "When the user changed a filter, the old cards needed to be removed before the new cards were created. I solved this by setting the container's innerHTML to an empty string at the beginning of the display function."
+        },
+        {
+            "title": "Keeping the Latest Post badge accurate",
+            "description": "At first, using the visible card index could label the first filtered result as the latest post even when it was not the newest post overall. I corrected this by comparing the post ID with the first item in the complete sorted posts array."
+        },
+        {
+            "title": "Matching category values exactly",
+            "description": "The values in the data-filter attributes had to match the category strings in the JSON exactly. Differences in spelling, spacing, or capitalization would prevent the filter from finding the correct items."
+        },
+        {
+            "title": "Building reusable detail pages",
+            "description": "I did not want to create a separate HTML file for every project. The challenge was creating one page that could display different content. I solved this by passing the project ID through the URL and using JavaScript to find and render the matching JSON object."
+        }
+    ],
+
+    "lessons": [
+        "I learned how JSON can separate website content from HTML structure.",
+        "I learned how fetch loads external data asynchronously.",
+        "I learned how template literals can generate HTML using object properties.",
+        "I learned how array methods such as sort, filter, find, map, and forEach can manage dynamic content.",
+        "I learned how data attributes can connect filter buttons with JSON categories.",
+        "I learned how URLSearchParams can identify which project should appear on a reusable details page.",
+        "I learned that reusable rendering functions reduce duplicated code and make the website easier to maintain.",
+        "I learned how important it is to clear and redraw content when applying dynamic filters."
+    ],
+
+    "conclusion": "Building the dynamic blog and project sections helped me understand how a website can be driven by data instead of hard-coded markup. By storing content in JSON and using JavaScript to generate the interface, I made the website easier to update and expand. I can now add a new project or blog post by creating another JSON object without manually rebuilding the page. This feature also gave me practical experience with asynchronous programming, array methods, URL parameters, DOM manipulation, and reusable page templates."
+    },
+   {
+    "id": "contact-form-validation",
+    "title": "Implementing Contact Form Validation",
+    "date": "2026-07-22",
+    "category": "Forms",
+    "image": "img/validation.jpg",
+    "summary": "How I implemented client-side validation to ensure users enter complete and correctly formatted information before submitting the contact form.",
+
+    "introduction": "A contact form is often the primary way visitors communicate with a website owner, so it is important to validate the information before it is submitted. For my ePortfolio, I implemented client-side validation using JavaScript to ensure users entered a valid name, email address, and message. My goal was to provide immediate feedback and prevent incomplete or incorrectly formatted information from being submitted.",
+
+    "feature": "The contact form validates three required fields before allowing the form to be submitted. The name field cannot be empty, the email field must follow a valid email format, and the message must contain at least twenty characters. Instead of relying on the browser's default validation messages, I displayed custom inline error messages beside each field. Once all validation rules passed, the form displayed a success message to simulate a successful submission.",
+
+    "approach": [
+        {
+            "title": "Creating the HTML form",
+            "description": "I began by creating the contact form using semantic HTML. Each input field was assigned a unique ID so it could easily be accessed through JavaScript. I also added dedicated error message elements beneath each field so that validation feedback could appear directly beside the incorrect input."
+        },
+        {
+            "title": "Preventing the default submission",
+            "description": "I attached an event listener to the form's submit event and used preventDefault to stop the browser from submitting the form immediately. This allowed JavaScript to validate every field before deciding whether the submission should continue."
+        },
+        {
+            "title": "Validating user input",
+            "description": "Each field was validated individually. The name field was checked to ensure it was not empty, the email address was validated using a regular expression, and the message field was checked to verify that it contained at least twenty characters."
+        },
+        {
+            "title": "Displaying inline error messages",
+            "description": "When validation failed, JavaScript displayed a custom error message directly below the corresponding input field. The invalid field was also visually highlighted so users could immediately identify which information needed to be corrected."
+        },
+        {
+            "title": "Clearing errors while typing",
+            "description": "To improve the user experience, I added input event listeners to each field. As users corrected their information, the associated error message disappeared automatically instead of waiting until the next form submission."
+        },
+        {
+            "title": "Simulating a successful submission",
+            "description": "After all validation rules passed, the form was hidden and replaced with a success message. This simulated a successful submission without requiring a backend server while still satisfying the assignment requirements."
+        }
+    ],
+
+    "challenges": [
+        {
+            "title": "Creating custom validation instead of browser validation",
+            "description": "Browsers provide built-in validation messages, but I wanted complete control over the appearance and wording of the feedback. I disabled the browser's default validation and implemented my own validation logic using JavaScript."
+        },
+        {
+            "title": "Validating email addresses",
+            "description": "One challenge was checking whether an email address was entered correctly. I solved this by using a regular expression that verifies the general structure of an email address before accepting the input."
+        },
+        {
+            "title": "Providing immediate feedback",
+            "description": "Initially, error messages only appeared after the form was submitted. I improved the user experience by clearing individual errors as users typed, allowing them to see that their corrections were being recognized immediately."
+        },
+        {
+            "title": "Keeping the validation organized",
+            "description": "Rather than writing repetitive code for every field, I created reusable helper functions such as showError, clearError, and validateEmail. This made the validation logic easier to read, maintain, and expand in the future."
+        }
+    ],
+
+    "lessons": [
+        "I learned how JavaScript can intercept form submissions using event listeners and preventDefault.",
+        "I learned how regular expressions can be used to validate email addresses.",
+        "I learned how separating validation into reusable functions makes code easier to maintain.",
+        "I learned that providing immediate feedback greatly improves the user experience.",
+        "I learned how DOM manipulation can dynamically display and remove validation messages.",
+        "I learned that client-side validation improves usability but should always be complemented by server-side validation in a real-world application."
+    ],
+
+    "conclusion": "Implementing client-side form validation helped me better understand how JavaScript can improve both usability and reliability. Instead of allowing incomplete or invalid information to be submitted, the form provides clear guidance to users as they complete each field. This project also reinforced the importance of writing reusable validation functions, organizing code logically, and designing interfaces that communicate effectively with users."
+    },
+   {
+    "id": "project-blog-filtering",
+    "title": "Implementing Project and Blog Filtering",
+    "date": "2026-07-25",
+    "category": "JavaScript",
+    "image": "img/filter.png",
+    "summary": "How I implemented interactive category filters that dynamically display matching projects and blog posts without reloading the page.",
+
+    "introduction": "As my ePortfolio grew, I wanted visitors to quickly find projects and blog posts that matched their interests. Instead of displaying every item all the time, I implemented a filtering system that allows users to display content based on selected categories. The filtering is handled entirely with JavaScript, providing a smooth user experience without reloading the page.",
+
+    "feature": "The filtering feature allows users to display only the projects or blog posts that belong to a selected category. When a filter button is clicked, JavaScript updates the displayed cards instantly while highlighting the active filter. The 'All' button restores the complete list so visitors can easily browse every project or article.",
+
+    "approach": [
+        {
+            "title": "Creating filter buttons",
+            "description": "I created a row of filter buttons using HTML. Each button contains a custom data-filter attribute that stores the category it represents. This allows JavaScript to determine which category the user selected without hard-coding any values."
+        },
+        {
+            "title": "Loading the project and blog data",
+            "description": "Both the Projects and Blog pages load their content from JSON files using the fetch API. Once the data has been loaded, I stored the complete arrays in memory so they could be reused whenever a different filter was selected."
+        },
+        {
+            "title": "Filtering the data",
+            "description": "When a filter button is clicked, JavaScript reads its data-filter value and uses the Array.filter() method to create a new array containing only the matching items. If the user selects the 'All' button, the original array is displayed without filtering."
+        },
+        {
+            "title": "Updating the displayed cards",
+            "description": "Before displaying the filtered results, I cleared the existing cards by resetting the container's innerHTML. JavaScript then generated a new set of cards using the filtered array, ensuring that only the selected category remained visible."
+        },
+        {
+            "title": "Highlighting the active filter",
+            "description": "To improve the user experience, I added an active CSS class to the selected filter button. Before activating the new button, JavaScript removes the active class from all other buttons so that only one filter appears selected at a time."
+        }
+    ],
+
+    "challenges": [
+        {
+            "title": "Matching category names",
+            "description": "The category values stored in the JSON files had to match the values stored in each button's data-filter attribute exactly. Even small differences in spelling or capitalization prevented the filter from returning the correct results."
+        },
+        {
+            "title": "Refreshing the displayed content",
+            "description": "Initially, the new results were being added below the existing cards. I solved this by clearing the container before rendering the filtered items, ensuring that only the current results were displayed."
+        },
+        {
+            "title": "Keeping the original data",
+            "description": "After filtering the data once, I still needed access to the complete list of projects and blog posts when the user selected the 'All' button. I solved this by storing the original arrays after loading the JSON files instead of replacing them with the filtered results."
+        },
+        {
+            "title": "Reusing the same logic",
+            "description": "Both the Blog and Projects pages use almost identical filtering behaviour. I designed the filtering functions using the same overall approach so that the code remained consistent and easier to maintain."
+        }
+    ],
+
+    "lessons": [
+        "I learned how the Array.filter() method can dynamically create subsets of data.",
+        "I learned how custom data attributes allow HTML and JavaScript to communicate efficiently.",
+        "I learned how to update the DOM by clearing and rebuilding content dynamically.",
+        "I learned how JavaScript event listeners can respond to user interactions without reloading the page.",
+        "I learned the importance of keeping the original data separate from filtered results.",
+        "I learned how small interface improvements, such as highlighting the active filter, make the application easier to use."
+    ],
+
+    "conclusion": "Implementing category filtering helped transform my portfolio into a more interactive website. Instead of navigating through every project or article, visitors can immediately display the content they are interested in. This feature also strengthened my understanding of JavaScript arrays, DOM manipulation, event handling, and writing reusable functions that can be applied across multiple pages."
+}
+]
